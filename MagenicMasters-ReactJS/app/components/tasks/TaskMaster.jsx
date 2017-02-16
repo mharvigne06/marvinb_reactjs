@@ -1,15 +1,15 @@
-var React = require("react");
+import React, { Component } from "react";
 
-var TaskPanel = require("./TaskPanel.jsx");
+import TaskPanel from "./TaskPanel.jsx";
 
-var TaskMaster = React.createClass({
-    render: function(){
-        return(
+class TaskMaster extends Component {
+    render() {
+        return (
             <div className="container">
-                <TaskPanel/>
+                <TaskPanel />
             </div>
         );
     }
-});
+}
 
-module.exports = TaskMaster;
+export default TaskMaster;

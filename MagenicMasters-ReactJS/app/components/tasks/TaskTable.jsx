@@ -1,8 +1,9 @@
-var React = require("react");
-var TaskItem = require("./TaskItem.jsx");
+import React, { Component } from "react";
 
-var TaskTable = React.createClass({
-    renderItems: function () {
+import TaskItem from "./TaskItem.jsx";
+
+class TaskTable extends Component {
+    renderItems() {
         return this.props.taskData.map(function (item) {
             return (
                 <TaskItem
@@ -12,8 +13,8 @@ var TaskTable = React.createClass({
                     />
             );
         }, this);
-    },
-    render: function () {
+    }
+    render() {
         return (
             <div>
                 <table className="table table-bordered table-striped">
@@ -32,6 +33,6 @@ var TaskTable = React.createClass({
             </div>
         );
     }
-});
+}
 
-module.exports = TaskTable;
+export default TaskTable;

@@ -1,16 +1,15 @@
-var React = require("react");
-var ReactBootstrap = require("react-bootstrap");
+import React, { Component } from "react";
+import ReactBootstrap, {Well} from "react-bootstrap";
 
-var Well = ReactBootstrap.Well;
-var Card = React.createClass({
-    render: function(){
+class Card extends Component {
+    render() {
         return (
-            <Well className="text-center" style={{height:"250px"}}>
+            <Well className="text-center" style={{ height: "250px" }}>
                 Card
             </Well>
         );
     }
-});
+}
 
 
-module.exports = Card;
+export default Card;

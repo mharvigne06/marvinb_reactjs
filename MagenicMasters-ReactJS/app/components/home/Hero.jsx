@@ -1,16 +1,15 @@
-var React = require("react");
-var ReactBootstrap = require("react-bootstrap");
+import React, { Component } from "react";
+import ReactBootstrap, {PageHeader} from "react-bootstrap";
 
-var PageHeader = ReactBootstrap.PageHeader;
-var Hero = React.createClass({
-    render: function(){
+class Hero extends Component {
+    render() {
         return (
-            <PageHeader className="text-center" style={{height:"200px"}} >
+            <PageHeader className="text-center" style={{ height: "200px" }} >
                 Hero
             </PageHeader>
         );
     }
-});
+}
 
 
-module.exports = Hero;
+export default Hero;

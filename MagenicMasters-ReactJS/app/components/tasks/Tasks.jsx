@@ -1,15 +1,15 @@
-var React = require("react");
+import React, { Component } from "react";
 
-var TaskMaster = require("./TaskMaster.jsx");
+import TaskMaster from "./TaskMaster.jsx";
 
-var Tasks = React.createClass({
-    render: function(){
-        return(
+class Tasks extends Component {
+    render() {
+        return (
             <div>
-                <TaskMaster/>
+                <TaskMaster />
             </div>
         );
     }
-});
+}
 
-module.exports = Tasks;
+export default Tasks;

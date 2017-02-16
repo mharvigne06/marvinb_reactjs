@@ -1,16 +1,15 @@
-var React = require("react");
-var ReactBootstrap = require("react-bootstrap");
+import React, { Component } from "react";
+import ReactBootstrap, {Well} from "react-bootstrap";
 
-var Well = ReactBootstrap.Well;
-var Section = React.createClass({
-    render: function(){
+class Section extends Component {
+    render() {
         return (
-            <Well className="text-center" style={{height:"300px"}}>
+            <Well className="text-center" style={{ height: "300px" }}>
                 Section
             </Well>
         );
     }
-});
+}
 
 
-module.exports = Section;
+export default Section;

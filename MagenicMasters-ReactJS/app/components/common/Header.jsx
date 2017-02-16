@@ -1,10 +1,10 @@
-var React = require("react");
-var ReactBootstrap = require("react-bootstrap");
-var ReactRouter = require("react-router");
+import React, { Component } from "react";
+import ReactBootstrap from "react-bootstrap";
+import ReactRouter, {Link} from "react-router";
 
 
-var Header = React.createClass({
-    render: function(){
+class Header extends Component {
+    render() {
         return (
             <div>
                 <nav className="navbar navbar-inverse">
@@ -13,14 +13,14 @@ var Header = React.createClass({
                             <a className="navbar-brand" href="/">My ReactJS Site</a>
                         </div>
                         <ul className="nav navbar-nav">
-                            <li><ReactRouter.Link to="/" activeClassName="active">Home</ReactRouter.Link></li>
-                            <li><ReactRouter.Link to="/Tasks" activeClassName="active">Tasks</ReactRouter.Link></li>
+                            <li><Link to="/" activeClassName="active">Home</Link></li>
+                            <li><Link to="/Tasks" activeClassName="active">Tasks</Link></li>
                         </ul>
                     </div>
                 </nav>
             </div>
         );
     }
-});
+}
 
-module.exports = Header;
+export default Header;

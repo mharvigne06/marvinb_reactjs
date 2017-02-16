@@ -1,36 +1,33 @@
-var React = require("react");
-var ReactBootstrap = require("react-bootstrap");
+import React, { Component } from "react";
+import ReactBootstrap, {Row, Col} from "react-bootstrap";
 
-var Hero = require("./Hero.jsx");
-var Section = require("./Section.jsx");
-var Card = require("./Card.jsx");
+import Hero from "./Hero.jsx";
+import Section from "./Section.jsx";
+import Card from "./Card.jsx";
 
-var Row = ReactBootstrap.Row;
-var Col = ReactBootstrap.Col;
-
-var Home = React.createClass({
-    render: function(){
-        return(
+class Home extends Component {
+    render() {
+        return (
             <div>
-                <Hero/>
+                <Hero />
                 <div className="container">
                     <Row>
                         <Col sm={12}>
-                            <Section/>
+                            <Section />
                         </Col>
                     </Row>
                 </div>
-                <div><p/></div>
+                <div><p /></div>
                 <div className="container">
                     <Row>
-                     <Col sm={4}><Card/></Col>
-                     <Col sm={4}><Card/></Col>
-                     <Col sm={4}><Card/></Col>
+                        <Col sm={4}><Card /></Col>
+                        <Col sm={4}><Card /></Col>
+                        <Col sm={4}><Card /></Col>
                     </Row>
                 </div>
             </div>
         );
     }
-});
+}
 
-module.exports = Home;
+export default Home;
