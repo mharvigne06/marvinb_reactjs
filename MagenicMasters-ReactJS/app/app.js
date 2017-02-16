@@ -25,11 +25,11 @@ class Layout extends Component {
 }
 
 ReactDOM.render(
-    <ReactRouter.Router history={ReactRouter.browserHistory}>
-        <ReactRouter.Route path="/" component={Layout}>
-            <ReactRouter.IndexRoute component={Home} />
-            <ReactRouter.Route path="Tasks" component={Tasks} />
-        </ReactRouter.Route>
-    </ReactRouter.Router>,
+    <Router history={browserHistory}>
+        <Route path="/" component={Layout}>
+            <IndexRoute component={Home} />
+            <Route path="Tasks" component={Tasks} />
+        </Route>
+    </Router>,
     document.getElementById("root")
 );
