@@ -9,7 +9,7 @@ class TaskTable extends Component {
                 <TaskItem
                     key={item.taskId}
                     taskItemData={item}
-                    handleRowDelete={this.props.handleRowDelete}
+                    handleDelete={this.props.handleDelete}
                     />
             );
         }, this);

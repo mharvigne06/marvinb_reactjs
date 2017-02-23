@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 import Button from "./Button.jsx";
 
+import * as TasksActions from "../../actions/taskActions";
 
 class TaskItem extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             editControlsVisible: "none",
             viewControlsVisible: "inline",
@@ -18,9 +18,8 @@ class TaskItem extends Component {
         this.handleRowEdit = this.handleRowEdit.bind(this);
         this.handleRowSave = this.handleRowSave.bind(this);
         this.handleRowCancel = this.handleRowCancel.bind(this);
-        this.handleRowDelete = this.handleRowDelete.bind(this);
         this.handleFieldChange = this.handleFieldChange.bind(this);
-
+        this.handleRowDelete = this.handleRowDelete.bind(this);
     }
     handleRowEdit() {
         this.setState({
@@ -33,10 +32,10 @@ class TaskItem extends Component {
             editControlsVisible: "none",
             viewControlsVisible: "inline"
         });
-        this.props.taskItemData.name = this.state.name;
-        this.props.taskItemData.description = this.state.desc;
-        this.props.taskItemData.priority = this.state.priority;
-        this.props.taskItemData.status = this.state.status;
+        TasksActions.editTask(this.props.taskItemData.taskId, this.state.name, this.state.desc, this.state.priority, this.state.status);
+    }
+    handleRowDelete() {
+        this.props.handleDelete(this.props.taskItemData.taskId);
     }
     handleRowCancel() {
         this.setState({
@@ -47,13 +46,6 @@ class TaskItem extends Component {
             priority: this.props.taskItemData.priority,
             status: this.props.taskItemData.status
         });
-    }
-    handleRowDelete(item) {
-        return function (e) {
-            e.preventDefault();
-            return this.props.handleRowDelete(item);
-        }.bind(this);
-
     }
     handleFieldChange(event) {
         let fieldName = event.target.id
@@ -120,22 +112,22 @@ class TaskItem extends Component {
                             icon="glyphicon glyphicon-pencil"
                             disp={this.state.viewControlsVisible}
                             onClick={this.handleRowEdit}
-                            btnId={this.props.taskItemData.taskId} />
+                            />
                         <Button buttonClass="btn btn-danger btn-sm"
                             icon="glyphicon glyphicon-trash"
                             disp={this.state.viewControlsVisible}
-                            onClick={this.handleRowDelete(this.props.taskItemData)}
-                            btnId={this.props.taskItemData.taskId} />
+                            onClick={this.handleRowDelete}
+                            />
                         <Button buttonClass="btn btn-success btn-sm"
                             icon="glyphicon glyphicon-floppy-disk"
                             disp={this.state.editControlsVisible}
                             onClick={this.handleRowSave}
-                            btnId={this.props.taskItemData.taskId} />
+                            />
                         <Button buttonClass="btn btn-danger btn-sm"
                             icon="glyphicon glyphicon-remove"
                             disp={this.state.editControlsVisible}
                             onClick={this.handleRowCancel}
-                            btnId={this.props.taskItemData.taskId} />
+                            />
                     </div>
                 </td>
             </tr>

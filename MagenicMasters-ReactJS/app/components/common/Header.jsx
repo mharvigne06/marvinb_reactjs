@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import ReactBootstrap from "react-bootstrap";
-import ReactRouter, {Link} from "react-router";
+import ReactBootstrap, { Nav, NavItem } from "react-bootstrap";
+import ReactRouter, { Link } from "react-router";
+import PriorityTaskListPopover from "./PriorityTaskListPopover.jsx";
 
 
 class Header extends Component {
@@ -16,6 +17,7 @@ class Header extends Component {
                             <li><Link to="/" activeClassName="active">Home</Link></li>
                             <li><Link to="/Tasks" activeClassName="active">Tasks</Link></li>
                         </ul>
+                        <PriorityTaskListPopover />
                     </div>
                 </nav>
             </div>

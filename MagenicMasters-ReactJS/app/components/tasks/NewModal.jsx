@@ -6,7 +6,7 @@ class NewModal extends Component {
         return (
             <Modal show={this.props.showModal} >
                 <Modal.Header>
-                    <Modal.Title>Add New Task</Modal.Title>
+                    <Modal.Title>{this.props.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <table className="table">
