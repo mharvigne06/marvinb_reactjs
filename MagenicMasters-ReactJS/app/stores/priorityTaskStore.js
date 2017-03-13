@@ -15,7 +15,7 @@ class PriorityTaskStore extends EventEmitter{
         return this._state.priorityTasks;
     }
     handleAction(action){
-        console.log("action", action.type);
+        //console.log("action", action.type);
         switch(action.type){
             case TaskActionTypes.ADD_TASK:{
                 Dispatcher.waitFor([TaskStore.dispatchToken]);

@@ -8,6 +8,8 @@ import Footer from "./components/common/Footer.jsx";
 
 import Home from "./components/home/Home.jsx";
 import Tasks from "./components/tasks/Tasks.jsx";
+import Timer from "./components/timer/Timer.jsx";
+
 
 class Layout extends Component {
     render() {
@@ -29,6 +31,7 @@ ReactDOM.render(
         <Route path="/" component={Layout}>
             <IndexRoute component={Home} />
             <Route path="Tasks" component={Tasks} />
+            <Route path="Timer" component={Timer} />
         </Route>
     </Router>,
     document.getElementById("root")

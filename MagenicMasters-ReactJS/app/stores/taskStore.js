@@ -47,7 +47,7 @@ class TaskStore extends EventEmitter{
             this._state.tasks.splice(_.findIndex(this._state.tasks, {taskId: id}), 1);
     }
     handleAction(action){
-        console.log("action", action.type);
+        //console.log("action", action.type);
         switch(action.type){
             case TaskActionTypes.ADD_TASK:{
                 this.addTask(action.task);

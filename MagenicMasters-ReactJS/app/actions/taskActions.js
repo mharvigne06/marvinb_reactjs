@@ -33,3 +33,21 @@ export function editTask(taskId, name, description, priority, status){
         }
     })
 }
+
+export function editTimer(id, name, time){
+    Dispatcher.dispatch({
+        type: TaskActiontypes.EDIT_TIMER,
+        timer: {
+            id,
+            name,
+            time
+        }
+    })
+}
+
+export function resetTimer(){
+    Dispatcher.dispatch({
+        type: TaskActiontypes.RESET_TIMER,
+        timers: []
+    })
+}

@@ -16,6 +16,7 @@ class Header extends Component {
                         <ul className="nav navbar-nav">
                             <li><Link to="/" activeClassName="active">Home</Link></li>
                             <li><Link to="/Tasks" activeClassName="active">Tasks</Link></li>
+                            <li><Link to="/Timer" activeClassName="active">Timer</Link></li>
                         </ul>
                         <PriorityTaskListPopover />
                     </div>
