@@ -40,9 +40,9 @@ class TimerStore extends EventEmitter{
     handleAction(action){
         console.log("action", action.type);
         switch(action.type){
-            case TaskActionTypes.ADD_TASK:
-            case TaskActionTypes.DELETE_TASK:
-            case TaskActionTypes.EDIT_TASK:
+            //case TaskActionTypes.ADD_TASK:
+            //case TaskActionTypes.DELETE_TASK:
+            //case TaskActionTypes.EDIT_TASK:
              case TaskActionTypes.EDIT_TIMER:{
                 Dispatcher.waitFor([TimerConfigStore.dispatchToken]);
                 this._state.timers = TimerConfigStore.getTimerConfigTimers();

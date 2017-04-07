@@ -49,9 +49,9 @@ class TimerConfigStore extends EventEmitter{
     handleAction(action){
         console.log("action", action.type);
         switch(action.type){
-            case TaskActionTypes.ADD_TASK:
-            case TaskActionTypes.DELETE_TASK:
-            case TaskActionTypes.EDIT_TASK:
+            //case TaskActionTypes.ADD_TASK:
+            //case TaskActionTypes.DELETE_TASK:
+            //case TaskActionTypes.EDIT_TASK:
             case TaskActionTypes.EDIT_TIMER:{
                 this.editTimer(action.timer);
                 this.emit('change');
